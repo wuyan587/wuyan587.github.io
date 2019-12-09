@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>websocket · GitBook</title>
+        <title>execl · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="mongodb.html" />
+    <link rel="next" href="express/" />
     
     
-    <link rel="prev" href="request_chreeio.html" />
+    <link rel="prev" href="mongodb.html" />
     
 
     </head>
@@ -159,7 +159,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4" data-path="websocket.html">
+        <li class="chapter " data-level="1.2.4" data-path="websocket.html">
             
                 <a href="websocket.html">
             
@@ -185,7 +185,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="execl.html">
+        <li class="chapter active" data-level="1.2.6" data-path="execl.html">
             
                 <a href="execl.html">
             
@@ -304,7 +304,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >websocket</a>
+        <a href=".." >execl</a>
     </h1>
 </div>
 
@@ -319,7 +319,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="websocket">websocket</h1>
+                                <h1 id="node-xlsx">node-xlsx</h1>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x5F15;&#x5165;&#x6A21;&#x5757;</span>
+<span class="hljs-keyword">const</span> excel = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;node-xlsx&apos;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+<span class="hljs-comment">//&#x521B;&#x5EFA;xlsx&#x8868;&#x683C;&#x7684;&#x683C;&#x5F0F;</span>
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x7B2C;&#x4E00;&#x884C;&#x7684;&#x8868;&#x540D;,&#x6CE8;&#x610F;&#xFF0C;execl&#x6570;&#x636E;&#x4E3A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;;</span>
+    <span class="hljs-keyword">let</span> arr=[[
+    <span class="hljs-string">&apos;sid&apos;</span>,
+    <span class="hljs-string">&apos;title&apos;</span>,
+    <span class="hljs-string">&apos;descrip&apos;</span>,
+    <span class="hljs-string">&apos;price&apos;</span>,
+    <span class="hljs-string">&apos;typelist&apos;</span>,
+    <span class="hljs-string">&apos;urls&apos;</span>
+]];
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;xlsx&#x7684;&#x8868;&#x6570;&#x636E;</span>
+    <span class="hljs-keyword">let</span> edata = [{
+        name: <span class="hljs-string">&apos;sheet1&apos;</span>,
+        data: []
+    }],buffer = <span class="hljs-literal">null</span>;
+    <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x8FDB;&#x8868;&#x683C;</span>
+    arr.push([
+        <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>
+    ]);
+    <span class="hljs-comment">//&#x5C06;&#x6570;&#x636E;&#x52A0;&#x5165;&#x5230;&#x8868;</span>
+    edata.data=arr;
+    <span class="hljs-comment">//&#x751F;&#x6210;xlsx&#x6570;&#x636E;&#x683C;&#x5F0F;</span>
+        buffer = excel.build([{
+                name: <span class="hljs-string">&apos;sheet1&apos;</span>,
+                data: arr2
+            }]);
+    <span class="hljs-comment">//&#x5199;&#x5165;&#x5230;&#x5B9E;&#x9645;&#x7684;xlsx&#x6587;&#x4EF6;</span>
+    fs.writeFile(<span class="hljs-string">&apos;./resul.xls&apos;</span>, buffer, err =&gt; {
+        <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x5199;&#x5165;&#x6210;&#x529F;&apos;</span>);
+    });
+    <span class="hljs-comment">// &#x8BFB;xlsx</span>
+    <span class="hljs-keyword">var</span> obj = excel.parse(<span class="hljs-string">&quot;./&quot;</span> + <span class="hljs-string">&quot;resul.xls&quot;</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj));
+</code></pre>
 
                                 
                                 </section>
@@ -347,12 +386,12 @@
 
             
                 
-                <a href="request_chreeio.html" class="navigation navigation-prev " aria-label="Previous page: request,chreeio">
+                <a href="mongodb.html" class="navigation navigation-prev " aria-label="Previous page: mongodb">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="mongodb.html" class="navigation navigation-next " aria-label="Next page: mongodb">
+                <a href="express/" class="navigation navigation-next " aria-label="Next page: express">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -363,7 +402,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"websocket","level":"1.2.4","depth":2,"next":{"title":"mongodb","level":"1.2.5","depth":2,"path":"Node/mongodb.md","ref":"Node/mongodb.md","articles":[]},"previous":{"title":"request,chreeio","level":"1.2.3","depth":2,"path":"Node/request_chreeio.md","ref":"Node/request_chreeio.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Node/websocket.md","mtime":"2019-12-09T03:01:10.629Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-09T12:20:39.341Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"execl","level":"1.2.6","depth":2,"next":{"title":"express","level":"1.2.7","depth":2,"path":"Node/express/README.md","ref":"Node/express/README.md","articles":[{"title":"express","level":"1.2.7.1","depth":3,"path":"Node/express/express.md","ref":"Node/express/express.md","articles":[]},{"title":"Router","level":"1.2.7.2","depth":3,"path":"Node/express/Router.md","ref":"Node/express/Router.md","articles":[]}]},"previous":{"title":"mongodb","level":"1.2.5","depth":2,"path":"Node/mongodb.md","ref":"Node/mongodb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Node/execl.md","mtime":"2019-12-09T12:19:32.222Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-09T12:20:39.341Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
