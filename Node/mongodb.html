@@ -308,37 +308,72 @@
                                 
                                 <h1 id="mongodb">mongodb</h1>
 <h4 id="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;">&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;</h4>
-<p>&#x200B;    <strong>show dbs</strong></p>
+<pre><code class="lang-javascript"> show dbs
+</code></pre>
 <h4 id="&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;">&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;</h4>
-<p>&#x200B;    <strong>use &#x5E93;&#x540D;</strong>    -&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</p>
+<pre><code class="lang-javascript">use &#x5E93;&#x540D;    <span class="hljs-comment">//&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</span>
+</code></pre>
 <h4 id="&#x9009;&#x62E9;&#x96C6;&#x5408;&#x5E76;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;">&#x9009;&#x62E9;&#x96C6;&#x5408;&#x5E76;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</h4>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.</strong></p>
+<pre><code class="lang-javascript">    db.&#x96C6;&#x5408;&#x540D;.
+</code></pre>
 <h4 id="&#x63D2;&#x5165;&#x6570;&#x636E;">&#x63D2;&#x5165;&#x6570;&#x636E;</h4>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.insert({key:value,key2:value2})</strong></p>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.save({key:value,key2:value2})</strong></p>
+<pre><code class="lang-javascript">    db.&#x96C6;&#x5408;&#x540D;.insert({key:value,key2:value2})
+
+&#x200B;    db.&#x96C6;&#x5408;&#x540D;.save({key:value,key2:value2})
+</code></pre>
 <h4 id="&#x5220;&#x9664;&#x6570;&#x636E;">&#x5220;&#x9664;&#x6570;&#x636E;</h4>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.remove({})</strong>  -&#x91CC;&#x9762;&#x7A7A;&#x5BF9;&#x8C61;&#x7684;&#x8BDD;&#x5220;&#x9664;&#x5168;&#x90E8;&#x6570;&#x636E;</p>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.remove({key:value})</strong>  -&#x5220;&#x9664;&#x6761;&#x4EF6;&#x5339;&#x914D;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;</p>
+<pre><code class="lang-javascript">    db.&#x96C6;&#x5408;&#x540D;.remove({})  <span class="hljs-comment">//&#x91CC;&#x9762;&#x7A7A;&#x5BF9;&#x8C61;&#x7684;&#x8BDD;&#x5220;&#x9664;&#x5168;&#x90E8;&#x6570;&#x636E;</span>
+
+&#x200B;    db.&#x96C6;&#x5408;&#x540D;.remove({key:value})  <span class="hljs-comment">//&#x5220;&#x9664;&#x6761;&#x4EF6;&#x5339;&#x914D;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;</span>
+</code></pre>
 <h4 id="&#x4FEE;&#x6539;&#x6570;&#x636E;"><font color="red">&#x4FEE;&#x6539;&#x6570;&#x636E;</font></h4>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.updata({key:value},{$set:{key2:value2}},true,true)</strong></p>
-<p>&#x200B;    &#x4FEE;&#x6539;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;</p>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.updata({&#x6761;&#x4EF6;&#x7684;&#x952E;&#x540D;:&#x6761;&#x4EF6;&#x7684;&#x952E;&#x503C;},{$set:{&#x8BBE;&#x7F6E;&#x7684;&#x952E;&#x540D;:&#x8BBE;&#x7F6E;&#x7684;&#x952E;&#x503C;}},true,true)</strong></p>
+<pre><code class="lang-javascript">    db.&#x96C6;&#x5408;&#x540D;.updata({key:value},{$set:{key2:value2}},<span class="hljs-literal">true</span>,<span class="hljs-literal">true</span>)
+
+&#x200B;    <span class="hljs-comment">//&#x4FEE;&#x6539;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;</span>
+
+&#x200B;    db.&#x96C6;&#x5408;&#x540D;.updata({&#x6761;&#x4EF6;&#x7684;&#x952E;&#x540D;:&#x6761;&#x4EF6;&#x7684;&#x952E;&#x503C;},{$set:{&#x8BBE;&#x7F6E;&#x7684;&#x952E;&#x540D;:&#x8BBE;&#x7F6E;&#x7684;&#x952E;&#x503C;}},<span class="hljs-literal">true</span>,<span class="hljs-literal">true</span>)
+</code></pre>
 <p>&#x200B;    &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;<strong>&#x67E5;&#x627E;&#x7684;&#x6761;&#x4EF6;</strong>&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;<strong>&#x4FEE;&#x6539;&#x5185;&#x5BB9;</strong>&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;<strong>&#x5339;&#x914D;&#x5168;&#x90E8;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;</strong>&#xFF0C;&#x7B2C;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;<strong>&#x4FEE;&#x6539;&#x5168;&#x90E8;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;</strong></p>
 <h4 id="&#x67E5;&#x8BE2;&#x6570;&#x636E;"><font color="red">&#x67E5;&#x8BE2;&#x6570;&#x636E;</font></h4>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.find()</strong>  -&#x62EC;&#x53F7;&#x91CC;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x67E5;&#x627E;&#x5168;&#x90E8;&#x6570;&#x636E;&#x3002;</p>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.find({key:value})</strong>  -&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;</p>
-<p>&#x200B;    <strong>db.&#x96C6;&#x5408;&#x540D;.findOne({key:value})</strong>   -&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x4E00;&#x6761;&#x6570;&#x636E;</p>
+<pre><code class="lang-javascript">    db.&#x96C6;&#x5408;&#x540D;.find()  <span class="hljs-comment">//&#x62EC;&#x53F7;&#x91CC;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x67E5;&#x627E;&#x5168;&#x90E8;&#x6570;&#x636E;&#x3002;</span>
+
+&#x200B;    db.&#x96C6;&#x5408;&#x540D;.find({key:value})  <span class="hljs-comment">//&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x6570;&#x636E;</span>
+
+&#x200B;    db.&#x96C6;&#x5408;&#x540D;.findOne({key:value})   <span class="hljs-comment">//&#x67E5;&#x627E;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x4E00;&#x6761;&#x6570;&#x636E;</span>
+</code></pre>
 <h4 id="&#x5404;&#x79CD;&#x6761;&#x4EF6;">&#x5404;&#x79CD;&#x6761;&#x4EF6;</h4>
-<p>&#x200B;    &#x5927;&#x4E8E;&#xFF1A; {$gt:value}</p>
-<p>&#x200B;    &#x5C0F;&#x4E8E;&#xFF1A;{$lt:value}</p>
-<p>&#x200B;    &#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#xFF1A;{$gte&#xFF1A;value}</p>
-<p>&#x200B;    &#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#xFF1A;{$lte:value}</p>
+<pre><code class="lang-javascript">    &#x5927;&#x4E8E;&#xFF1A; {$gt:value}
+
+&#x200B;    &#x5C0F;&#x4E8E;&#xFF1A;{$lt:value}
+
+&#x200B;    &#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#xFF1A;{$gte&#xFF1A;value}
+
+&#x200B;    &#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#xFF1A;{$lte:value}
+</code></pre>
 <h4 id="&#x6392;&#x5E8F;">&#x6392;&#x5E8F;</h4>
-<p>&#x200B;    <strong>.sort({key:-1})</strong>  &#x6309;&#x6761;&#x4EF6;&#x964D;&#x5E8F;&#x6392;&#x5217;</p>
+<pre><code class="lang-javascript">    .sort({key:<span class="hljs-number">-1</span>})  <span class="hljs-comment">//&#x6309;&#x6761;&#x4EF6;&#x964D;&#x5E8F;&#x6392;&#x5217;</span>
+</code></pre>
 <h4 id="&#x5207;&#x5272;">&#x5207;&#x5272;</h4>
-<p>&#x200B;    <strong>.limit(number)</strong>  -&#x4ECE;&#x524D;&#x5F00;&#x59CB;&#x5207;&#x5272;&#x51FA;number&#x6761;&#x6570;&#x636E;</p>
+<pre><code class="lang-javascript">    .limit(number)  <span class="hljs-comment">//&#x4ECE;&#x524D;&#x5F00;&#x59CB;&#x5207;&#x5272;&#x51FA;number&#x6761;&#x6570;&#x636E;</span>
+</code></pre>
 <h4 id="&#x8DF3;&#x8FC7;">&#x8DF3;&#x8FC7;</h4>
-<p>&#x200B;    <strong>.skip(number)</strong>  -&#x4ECE;&#x524D;&#x5F00;&#x59CB;&#x8DF3;&#x8FC7;number&#x6761;&#x6570;&#x636E;</p>
+<pre><code class="lang-javascript">    .skip(number)  <span class="hljs-comment">//&#x4ECE;&#x524D;&#x5F00;&#x59CB;&#x8DF3;&#x8FC7;number&#x6761;&#x6570;&#x636E;</span>
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;mongodb">&#x914D;&#x7F6E;mongodb</h4>
+<h5 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;">&#x914D;&#x7F6E;&#x73AF;&#x5883;</h5>
+<p>&#x200B;    &#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x53F3;&#x952E;&#x9009;&#x62E9;<strong>&#x5C5E;&#x6027;</strong>&#xFF0C;&#x9009;&#x62E9;<strong>&#x9AD8;&#x7EA7;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;</strong>&#xFF0C;&#x9009;&#x62E9;<strong>&#x9AD8;&#x7EA7;</strong>&#xFF0C;&#x70B9;&#x5F00;<strong>&#x73AF;&#x5883;&#x53D8;&#x91CF;</strong>&#xFF0C;&#x9009;&#x62E9;<strong>&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;</strong>&#x4E00;&#x680F;&#xFF0C;&#x70B9;&#x51FB;<strong>&#x53D8;&#x91CF;&#x540D;&#x4E3A;Path</strong>&#x7684;&#x90A3;&#x680F;&#xFF0C;&#x9009;&#x62E9;<strong>&#x7F16;&#x8F91;</strong>&#xFF0C;<strong>&#x6DFB;&#x52A0;</strong>&#xFF0C;&#x52A0;&#x5165;mongodb&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x7684;<strong>bin&#x8DEF;&#x5F84;</strong>&#xFF0C;&#x5982;C:\Program Files\MongoDB\Server\3.2\bin</p>
+<h5 id="&#x542F;&#x52A8;&#x670D;&#x52A1;">&#x542F;&#x52A8;&#x670D;&#x52A1;</h5>
+<pre><code class="lang-javascript">mongod  --storageEngine mmapv1 --dbpath <span class="hljs-string">&quot;d:\mongodb\db&quot;</span> --logpath <span class="hljs-string">&quot;d:\mongodb\log\MongoDB.log&quot;</span>
+</code></pre>
+<p>&#x540E;&#x9762;&#x7684;<strong>dbpath</strong>&#x548C;<strong>logpath</strong>&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x548C;&#x65E5;&#x5FD7;&#x50A8;&#x5B58;&#x8DEF;&#x5F84;&#xFF0C;&#x9700;<strong>&#x81EA;&#x5DF1;&#x521B;&#x5EFA;</strong></p>
+<h5 id="&#x767B;&#x8BB0;&#x4E3A;window&#x670D;&#x52A1;&#x5F00;&#x673A;&#x81EA;&#x542F;">&#x767B;&#x8BB0;&#x4E3A;window&#x670D;&#x52A1;(&#x5F00;&#x673A;&#x81EA;&#x542F;)</h5>
+<pre><code class="lang-javascript">mongod  --storageEngine mmapv1 --dbpath <span class="hljs-string">&quot;d:\mongodb\db&quot;</span> --logpath <span class="hljs-string">&quot;d:\mongodb\log\MongoDB.log&quot;</span> --install --serviceName <span class="hljs-string">&quot;MongoDB&quot;</span>
+</code></pre>
+<h5 id="&#x767B;&#x8BB0;&#x5B8C;&#x6210;&#x540E;">&#x767B;&#x8BB0;&#x5B8C;&#x6210;&#x540E;</h5>
+<pre><code class="lang-javascript">NET START MongoDB
+</code></pre>
+<h5 id="&#x5F00;&#x59CB;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;">&#x5F00;&#x59CB;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;</h5>
+<p>&#x200B;    &#x8FD0;&#x884C;cmd &#x8F93;&#x5165; mongo</p>
 
                                 
                                 </section>
@@ -382,7 +417,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mongodb","level":"1.2.5","depth":2,"next":{"title":"express","level":"1.2.6","depth":2,"path":"Node/express/README.md","ref":"Node/express/README.md","articles":[{"title":"express","level":"1.2.6.1","depth":3,"path":"Node/express/express.md","ref":"Node/express/express.md","articles":[]},{"title":"Router","level":"1.2.6.2","depth":3,"path":"Node/express/Router.md","ref":"Node/express/Router.md","articles":[]}]},"previous":{"title":"websocket","level":"1.2.4","depth":2,"path":"Node/websocket.md","ref":"Node/websocket.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Node/mongodb.md","mtime":"2019-12-09T08:59:16.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-09T08:59:51.122Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mongodb","level":"1.2.5","depth":2,"next":{"title":"express","level":"1.2.6","depth":2,"path":"Node/express/README.md","ref":"Node/express/README.md","articles":[{"title":"express","level":"1.2.6.1","depth":3,"path":"Node/express/express.md","ref":"Node/express/express.md","articles":[]},{"title":"Router","level":"1.2.6.2","depth":3,"path":"Node/express/Router.md","ref":"Node/express/Router.md","articles":[]}]},"previous":{"title":"websocket","level":"1.2.4","depth":2,"path":"Node/websocket.md","ref":"Node/websocket.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters"],"pluginsConfig":{"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Node/mongodb.md","mtime":"2019-12-09T09:43:30.328Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-09T09:46:47.397Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
