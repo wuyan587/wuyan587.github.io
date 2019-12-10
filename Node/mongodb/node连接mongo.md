@@ -41,29 +41,29 @@
     })
 ```
 #### 添加数据
-##### 		添加一条
+##### 			添加一条
 ```javascript
     tables.insertOne({name:'李四'}); //插入一条name值为李四的数据
 ```
-##### 		添加多条
+##### 			添加多条
 ```javascript
     tables.insertMany([{name:李四}，{name:张三});//插入两条数据
 ```
 #### 更新数据
-##### 		更新一条
+##### 			更新一条	
 ```javascript
     tables.updateOne({name:'李四'},{$set:{age:30}});//更新name值为李四的数据的age值为30，多条匹配则只更新一条
 ```
-##### 		更新多条
+##### 			更新多条
 ```javascript
     tables.updateMany({name:'李四'},{$set:{age:30}});//更新全部name值为李四的数据
 ```
 #### 删除数据
-##### 		删除一条
+##### 			删除一条
 ```javascript
     tables.deleteOne({name:'李四'}); //删除name值为李四的数据,多条匹配只删除第一条
 ```
-##### 		删除多条
+##### 			删除多条
 ```javascript
     tables.deleteMany({name:'李四'}); //删除全部name值为李四的数据
 ```
