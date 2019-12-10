@@ -1,0 +1,522 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>node连接mongo · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../execl.html" />
+    
+    
+    <link rel="prev" href="mongodb.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Http.html">
+            
+                <a href="../Http.html">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../fs_path.html">
+            
+                <a href="../fs_path.html">
+            
+                    
+                    fs,path
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../request_chreeio.html">
+            
+                <a href="../request_chreeio.html">
+            
+                    
+                    request,chreeio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../websocket.html">
+            
+                <a href="../websocket.html">
+            
+                    
+                    websocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="README.md">
+            
+                <span>
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.2" data-path="node连接mongo.html">
+            
+                <a href="node连接mongo.html">
+            
+                    
+                    node连接mongo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../execl.html">
+            
+                <a href="../execl.html">
+            
+                    
+                    execl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../express/">
+            
+                <a href="../express/">
+            
+                    
+                    express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../express/express.html">
+            
+                <a href="../express/express.html">
+            
+                    
+                    express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../express/Router.html">
+            
+                <a href="../express/Router.html">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Vue/">
+            
+                <a href="../../Vue/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../React/">
+            
+                <a href="../../React/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >node连接mongo</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mongodb">mongodb</h1>
+<h4 id="&#x5B89;&#x88C5;mongodb&#x6A21;&#x5757;">&#x5B89;&#x88C5;mongodb&#x6A21;&#x5757;</h4>
+<pre><code class="lang-javascript">    npm install mongodb -S
+</code></pre>
+<h4 id="&#x5F15;&#x5165;&#x6A21;&#x5757;&#x5E76;&#x521D;&#x59CB;&#x5316;">&#x5F15;&#x5165;&#x6A21;&#x5757;&#x5E76;&#x521D;&#x59CB;&#x5316;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">const</span> mongodb=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mongodb&apos;</span>).MongoClient;
+</code></pre>
+<h4 id="&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x94FE;&#x63A5;&#x5730;&#x5740;">&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x94FE;&#x63A5;&#x5730;&#x5740;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">const</span> url=<span class="hljs-string">&apos;mongodb://localhost:27017&apos;</span>;
+</code></pre>
+<h4 id="&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7684;&#x540D;&#x79F0;">&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7684;&#x540D;&#x79F0;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">const</span> dbname=<span class="hljs-string">&apos;admin&apos;</span>; <span class="hljs-comment">//&#x94FE;&#x63A5;&#x5230;admin&#x6570;&#x636E;&#x5E93;</span>
+</code></pre>
+<h4 id="&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x9762;&#x7684;&#x8868;&#x540D;">&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x9762;&#x7684;&#x8868;&#x540D;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">const</span> tablename=<span class="hljs-string">&apos;user&apos;</span>;
+</code></pre>
+<h4 id="&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;">&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</h4>
+<pre><code class="lang-javascript">    mongodb.connect(url,(err,client)=&gt;{});
+</code></pre>
+<h4 id="&#x8FDE;&#x63A5;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5E93;">&#x8FDE;&#x63A5;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5E93;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">const</span> db=client.db(dbname);
+</code></pre>
+<h4 id="&#x8FDE;&#x63A5;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8868;">&#x8FDE;&#x63A5;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8868;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">const</span> tables=db.collection(tablename);
+</code></pre>
+<h4 id="&#x67E5;&#x627E;&#x6570;&#x636E;">&#x67E5;&#x627E;&#x6570;&#x636E;</h4>
+<pre><code class="lang-javascript">    <span class="hljs-comment">//db.&#x8868;&#x540D;.find({&#x8FD9;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x653E;&#x6761;&#x4EF6;})</span>
+    tables.find().toArray((err,data)=&gt;{
+        <span class="hljs-built_in">console</span>.log(data); <span class="hljs-comment">//data&#x5C31;&#x662F;&#x67E5;&#x8BE2;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E3A;json&#x7684;&#x683C;&#x5F0F;</span>
+    })
+</code></pre>
+<h4 id="&#x6DFB;&#x52A0;&#x6570;&#x636E;">&#x6DFB;&#x52A0;&#x6570;&#x636E;</h4>
+<h5 id="&#x6DFB;&#x52A0;&#x4E00;&#x6761;">&#x6DFB;&#x52A0;&#x4E00;&#x6761;</h5>
+<pre><code class="lang-javascript">    tables.insertOne({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>}); <span class="hljs-comment">//&#x63D2;&#x5165;&#x4E00;&#x6761;name&#x503C;&#x4E3A;&#x674E;&#x56DB;&#x7684;&#x6570;&#x636E;</span>
+</code></pre>
+<h5 id="&#x6DFB;&#x52A0;&#x591A;&#x6761;">&#x6DFB;&#x52A0;&#x591A;&#x6761;</h5>
+<pre><code class="lang-javascript">    tables.insertMany([{name:&#x674E;&#x56DB;}&#xFF0C;{name:&#x5F20;&#x4E09;});<span class="hljs-comment">//&#x63D2;&#x5165;&#x4E24;&#x6761;&#x6570;&#x636E;</span>
+</code></pre>
+<h4 id="&#x66F4;&#x65B0;&#x6570;&#x636E;">&#x66F4;&#x65B0;&#x6570;&#x636E;</h4>
+<h5 id="&#x66F4;&#x65B0;&#x4E00;&#x6761;">&#x66F4;&#x65B0;&#x4E00;&#x6761;</h5>
+<pre><code class="lang-javascript">    tables.updateOne({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>},{$set:{age:<span class="hljs-number">30</span>}});<span class="hljs-comment">//&#x66F4;&#x65B0;name&#x503C;&#x4E3A;&#x674E;&#x56DB;&#x7684;&#x6570;&#x636E;&#x7684;age&#x503C;&#x4E3A;30&#xFF0C;&#x591A;&#x6761;&#x5339;&#x914D;&#x5219;&#x53EA;&#x66F4;&#x65B0;&#x4E00;&#x6761;</span>
+</code></pre>
+<h5 id="&#x66F4;&#x65B0;&#x591A;&#x6761;">&#x66F4;&#x65B0;&#x591A;&#x6761;</h5>
+<pre><code class="lang-javascript">    tables.updateMany({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>},{$set:{age:<span class="hljs-number">30</span>}});<span class="hljs-comment">//&#x66F4;&#x65B0;&#x5168;&#x90E8;name&#x503C;&#x4E3A;&#x674E;&#x56DB;&#x7684;&#x6570;&#x636E;</span>
+</code></pre>
+<h4 id="&#x5220;&#x9664;&#x6570;&#x636E;">&#x5220;&#x9664;&#x6570;&#x636E;</h4>
+<h5 id="&#x5220;&#x9664;&#x4E00;&#x6761;">&#x5220;&#x9664;&#x4E00;&#x6761;</h5>
+<pre><code class="lang-javascript">    tables.deleteOne({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>}); <span class="hljs-comment">//&#x5220;&#x9664;name&#x503C;&#x4E3A;&#x674E;&#x56DB;&#x7684;&#x6570;&#x636E;,&#x591A;&#x6761;&#x5339;&#x914D;&#x53EA;&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x6761;</span>
+</code></pre>
+<h5 id="&#x5220;&#x9664;&#x591A;&#x6761;">&#x5220;&#x9664;&#x591A;&#x6761;</h5>
+<pre><code class="lang-javascript">    tables.deleteMany({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>}); <span class="hljs-comment">//&#x5220;&#x9664;&#x5168;&#x90E8;name&#x503C;&#x4E3A;&#x674E;&#x56DB;&#x7684;&#x6570;&#x636E;</span>
+</code></pre>
+<h1 id="&#x603B;&#x7684;&#x4EE3;&#x7801;&#x4E3A;">&#x603B;&#x7684;&#x4EE3;&#x7801;&#x4E3A;</h1>
+<pre><code class="lang-javascript">    <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316; mongodb&#x6A21;&#x5757;</span>
+    <span class="hljs-keyword">const</span> mongodb=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mongodb&apos;</span>).MongoClient;
+    <span class="hljs-comment">//mongodb&#x7684;&#x94FE;&#x63A5;&#x5730;&#x5740;</span>
+    <span class="hljs-keyword">const</span> url=<span class="hljs-string">&apos;mongodb://localhost:27017&apos;</span>;
+    <span class="hljs-comment">//&#x4F60;&#x8981;&#x8FDE;&#x63A5;&#x7684;mongodb&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;</span>
+    <span class="hljs-keyword">const</span> dbname=<span class="hljs-string">&apos;admin&apos;</span>;
+    <span class="hljs-comment">//&#x4F60;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x8868;&#x540D;</span>
+    <span class="hljs-keyword">const</span> tablename=<span class="hljs-string">&apos;user&apos;</span>;
+    <span class="hljs-comment">//&#x8FDE;&#x63A5;mongodb</span>
+    mongodb.connect(url,(err,client)=&gt;{
+        <span class="hljs-comment">//&#x8FDE;&#x63A5;&#x5E93;</span>
+        <span class="hljs-keyword">const</span> db=client.db(dbname);
+        <span class="hljs-comment">//&#x8FDE;&#x63A5;&#x8868;</span>
+        <span class="hljs-keyword">const</span> tables=db.collection(tablename);
+        <span class="hljs-comment">//&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+        tables.find().toArray((err,data)=&gt;{
+            <span class="hljs-built_in">console</span>.log(data);
+        })
+        <span class="hljs-comment">//&#x589E;&#x52A0;&#x6570;&#x636E;</span>
+        tables.insertOne({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>}); <span class="hljs-comment">//&#x589E;&#x52A0;&#x4E00;&#x6761;</span>
+        tables.insertMany([{name:&#x674E;&#x56DB;}&#xFF0C;{name:&#x5F20;&#x4E09;});<span class="hljs-comment">//&#x63D2;&#x5165;&#x591A;&#x6761;&#x6570;&#x636E;</span>
+        <span class="hljs-comment">//&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x4FEE;&#x6539;&#x6570;&#x636E;&#xFF09;</span>
+        tables.updateOne({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>},{$set:{age:<span class="hljs-number">30</span>}});<span class="hljs-comment">//&#x4FEE;&#x6539;&#x5339;&#x914D;&#x7684;&#x7B2C;&#x4E00;&#x6761;</span>
+        tables.updateMany({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>},{$set:{age:<span class="hljs-number">30</span>}});<span class="hljs-comment">//&#x4FEE;&#x6539;&#x5168;&#x90E8;&#x5339;&#x914D;&#x7684;&#x6570;&#x636E;</span>
+        <span class="hljs-comment">//&#x5220;&#x9664;&#x6570;&#x636E;</span>
+        tables.deleteOne({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>});  <span class="hljs-comment">//&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x6761;&#x5339;&#x914D;&#x7684;&#x6570;&#x636E;</span>
+        tables.deleteMany({name:<span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>}); <span class="hljs-comment">//&#x5220;&#x9664;&#x5168;&#x90E8;&#x5339;&#x914D;&#x7684;&#x6570;&#x636E;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb.html" class="navigation navigation-prev " aria-label="Previous page: mongodb">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../execl.html" class="navigation navigation-next " aria-label="Next page: execl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"node连接mongo","level":"1.2.5.2","depth":3,"next":{"title":"execl","level":"1.2.6","depth":2,"path":"Node/execl.md","ref":"Node/execl.md","articles":[]},"previous":{"title":"mongodb","level":"1.2.5.1","depth":3,"path":"Node/mongodb/mongodb.md","ref":"Node/mongodb/mongodb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Node/mongodb/node连接mongo.md","mtime":"2019-12-10T09:34:58.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-10T09:44:18.964Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
