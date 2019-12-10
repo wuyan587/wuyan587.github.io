@@ -1,4 +1,7 @@
 # request,chreeio
+### 安装request和cheerio模块
+    npm install request -S
+    npm install cheerio -S
 ```javascript
 //引入模块
 const request=require('request');

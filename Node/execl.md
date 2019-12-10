@@ -1,4 +1,7 @@
 # node-xlsx
+### 安装node-xlsx模块
+    npm install node-xlsx -S
+    
 ```javascript
 //引入模块
 const excel = require('node-xlsx');
