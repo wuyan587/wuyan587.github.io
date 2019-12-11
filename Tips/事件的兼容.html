@@ -409,26 +409,25 @@
                                 
                                 <h1 id="&#x4E8B;&#x4EF6;&#x7684;&#x517C;&#x5BB9;">&#x4E8B;&#x4EF6;&#x7684;&#x517C;&#x5BB9;</h1>
 <h3 id="&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x517C;&#x5BB9;">&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x517C;&#x5BB9;</h3>
-<pre><code>evt = evt || window.event
-</code></pre><h3 id="&#x6EDA;&#x52A8;&#x6761;">&#x6EDA;&#x52A8;&#x6761;</h3>
-<pre><code>document.documentElement.scrollTop||document.body.scrollTop
-</code></pre><h3 id="&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x517C;&#x5BB9;">&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x517C;&#x5BB9;</h3>
-<pre><code>event.stopPropagation()||event.cancelBubble=true;
-</code></pre><h3 id="&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x517C;&#x5BB9;">&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x517C;&#x5BB9;</h3>
-<pre><code>evt.preventDefault()||evt.returnValue=false;
-</code></pre><h3 id="&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x517C;&#x5BB9;">&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x517C;&#x5BB9;</h3>
-<pre><code>addEventListener(event,fn,&apos;true&apos;)||attactEvent(onevent,fn)
+<p><strong>evt = evt || window.event</strong></p>
+<h3 id="&#x6EDA;&#x52A8;&#x6761;">&#x6EDA;&#x52A8;&#x6761;</h3>
+<p><strong>document.documentElement.scrollTop||document.body.scrollTop</strong></p>
+<h3 id="&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x517C;&#x5BB9;">&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x5192;&#x6CE1;&#x517C;&#x5BB9;</h3>
+<p><strong>event.stopPropagation()||event.cancelBubble=true;</strong></p>
+<h3 id="&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x517C;&#x5BB9;">&#x963B;&#x6B62;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x517C;&#x5BB9;</h3>
+<p><strong>evt.preventDefault()||evt.returnValue=false;</strong></p>
+<h3 id="&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x517C;&#x5BB9;">&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x517C;&#x5BB9;</h3>
+<p><strong>addEventListener(event,fn,&apos;true&apos;)||attactEvent(onevent,fn)</strong></p>
+<p><strong><font color="red">&#x533A;&#x522B;:</font></strong>
+    <strong>1.&#x62EC;&#x53F7;&#x91CC;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#xFF1A;ie2&#x4E2A;&#xFF0C;&#x6807;&#x51C6;3&#x4E2A;</strong>
+    <strong>2.&#x4E8B;&#x4EF6;&#x7684;&#x524D;&#x9762;&#xFF1A;ie&#x8981;&#x52A0;on&#xFF0C;&#x6807;&#x51C6;&#x4E0D;&#x52A0;on</strong>
+    <strong>3.&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E0D;&#x540C;&#xFF1A;&#x6807;&#x51C6;&#x6B63;&#x7740;&#x6267;&#x884C;&#xFF0C;ie&#x53CD;&#x7740;&#x6267;&#x884C;</strong>
+    <strong>4.this&#x7684;&#x6307;&#x5411;&#x4E0D;&#x540C;&#xFF1A;ie&#x7684;&#x6307;&#x5411;&#x4E3A;window&#xFF0C;&#x6807;&#x51C6;&#x7684;&#x6307;&#x5411;&#x4E3A;&#x89E6;&#x53D1;&#x5BF9;&#x8C61;</strong></p>
+<h3 id="&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;">&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</h3>
+<p><strong>removeEventListener(event,fn,&apos;true&apos;)||detachtEvent(onevent,fn)</strong></p>
+<h3 id="&#x4E8B;&#x4EF6;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x517C;&#x5BB9;">&#x4E8B;&#x4EF6;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x517C;&#x5BB9;</h3>
+<p><strong>event.target || event.srcElement;</strong></p>
 
-&#x533A;&#x522B;:
-    1.&#x62EC;&#x53F7;&#x91CC;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#xFF1A;ie2&#x4E2A;&#xFF0C;&#x6807;&#x51C6;3&#x4E2A;
-    2.&#x4E8B;&#x4EF6;&#x7684;&#x524D;&#x9762;&#xFF1A;ie&#x8981;&#x52A0;on&#xFF0C;&#x6807;&#x51C6;&#x4E0D;&#x52A0;on
-    3.&#x4E8B;&#x4EF6;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E0D;&#x540C;&#xFF1A;&#x6807;&#x51C6;&#x6B63;&#x7740;&#x6267;&#x884C;&#xFF0C;ie&#x53CD;&#x7740;&#x6267;&#x884C;
-    4.this&#x7684;&#x6307;&#x5411;&#x4E0D;&#x540C;&#xFF1A;ie&#x7684;&#x6307;&#x5411;&#x4E3A;window&#xFF0C;&#x6807;&#x51C6;&#x7684;&#x6307;&#x5411;&#x4E3A;&#x89E6;&#x53D1;&#x5BF9;&#x8C61;
-</code></pre><h3 id="&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;">&#x53D6;&#x6D88;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;</h3>
-<pre><code>removeEventListener(event,fn,&apos;true&apos;)||detachtEvent(onevent,fn)
-</code></pre><h3 id="&#x4E8B;&#x4EF6;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x517C;&#x5BB9;">&#x4E8B;&#x4EF6;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x517C;&#x5BB9;</h3>
-<pre><code>event.target || event.srcElement;
-</code></pre>
                                 
                                 </section>
                             
@@ -467,7 +466,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"事件的兼容","level":"1.5.2","depth":2,"previous":{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"path":"Tips/forEach,for_in,for_of.md","ref":"Tips/forEach,for_in,for_of.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tips/事件的兼容.md","mtime":"2019-12-11T11:38:57.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T11:41:04.564Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"事件的兼容","level":"1.5.2","depth":2,"previous":{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"path":"Tips/forEach,for_in,for_of.md","ref":"Tips/forEach,for_in,for_of.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tips/事件的兼容.md","mtime":"2019-12-11T11:45:55.575Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T11:46:06.668Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
