@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="事件的兼容.html" />
+    
     
     <link rel="prev" href="./" />
     
@@ -344,6 +346,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.2" data-path="事件的兼容.html">
+            
+                <a href="事件的兼容.html">
+            
+                    
+                    事件的兼容
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -403,7 +418,7 @@
     <span class="hljs-built_in">console</span>.log(arr); <span class="hljs-comment">//arr&#x7684;&#x503C;&#x5C31;&#x662F;&#x5176;&#x6570;&#x7EC4;&#x672C;&#x8EAB;</span>
 })
 </code></pre>
-<h4 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h4>
+<h4 id="&#x7F3A;&#x70B9;-"><font color="red"> &#x7F3A;&#x70B9; </font></h4>
 <p>&#x200B;    1.forEach&#x4E0D;&#x652F;&#x6301;break,return &#x4E0D;&#x80FD;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;</p>
 <h3 id="for-in">for in</h3>
 <p>&#x200B;    for in&#x5927;&#x90E8;&#x5206;&#x65F6;&#x95F4;&#x90FD;&#x662F;&#x88AB;&#x7528;&#x5728;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x7ED3;&#x6784;&#x4E3A;</p>
@@ -416,7 +431,7 @@
     <span class="hljs-built_in">console</span>.log(arr[index]);<span class="hljs-comment">//index&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;</span>
 }
 </code></pre>
-<h4 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h4>
+<h4 id="&#x7F3A;&#x70B9;"><font color="red">&#x7F3A;&#x70B9;</font></h4>
 <p>&#x200B;    1.for in&#x904D;&#x5386;&#x6570;&#x7EC4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x904D;&#x5386;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x4E71;&#x7684;&#x3002;
 &#x200B;    2.for in&#x904D;&#x5386;&#x6570;&#x7EC4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x904D;&#x5386;&#x81EA;&#x5B9A;&#x4E49;&#x7D22;&#x5F15;&#x3002;
 &#x200B;    3.for in&#x904D;&#x5386;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7D22;&#x5F15;&#x7684;&#x7C7B;&#x578B;&#x662F;string&#x3002;
@@ -432,9 +447,9 @@
         <span class="hljs-built_in">console</span>.log(value); <span class="hljs-comment">//&#x8F93;&#x51FA; a,b,c,d</span>
     }
 </code></pre>
-<h4 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h4>
+<h4 id="&#x7F3A;&#x70B9;"><font color="red">&#x7F3A;&#x70B9;</font></h4>
 <p>&#x200B;    1.&#x6CA1;&#x6CD5;&#x83B7;&#x53D6;&#x7D22;&#x5F15;&#xFF01;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x7D22;&#x5F15;&#x9700;&#x8981;&#x7528;&#x5230;entries()&#x3002;</p>
-<p>&#x200B;    <!--entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)。--></p>
+<p>&#x200B;    <em>entries() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7684;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x6570;&#x7EC4;&#x7684;&#x952E;&#x503C;&#x5BF9; (key/value)&#x3002;</em></p>
 <pre><code class="lang-javascript">    <span class="hljs-comment">//&#x904D;&#x5386;&#x6570;&#x7EC4;</span>
     <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> [index,value] <span class="hljs-keyword">of</span> arr.entries()){
         <span class="hljs-built_in">console</span>.log(index,value); 
@@ -468,10 +483,14 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Tips">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Tips">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="事件的兼容.html" class="navigation navigation-next " aria-label="Next page: 事件的兼容">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -480,7 +499,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"previous":{"title":"Tips","level":"1.5","depth":1,"path":"Tips/README.md","ref":"Tips/README.md","articles":[{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"path":"Tips/forEach,for_in,for_of.md","ref":"Tips/forEach,for_in,for_of.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tips/forEach,for_in,for_of.md","mtime":"2019-12-11T09:35:16.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T09:35:56.317Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"next":{"title":"事件的兼容","level":"1.5.2","depth":2,"path":"Tips/事件的兼容.md","ref":"Tips/事件的兼容.md","articles":[]},"previous":{"title":"Tips","level":"1.5","depth":1,"path":"Tips/README.md","ref":"Tips/README.md","articles":[{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"path":"Tips/forEach,for_in,for_of.md","ref":"Tips/forEach,for_in,for_of.md","articles":[]},{"title":"事件的兼容","level":"1.5.2","depth":2,"path":"Tips/事件的兼容.md","ref":"Tips/事件的兼容.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tips/forEach,for_in,for_of.md","mtime":"2019-12-11T10:56:07.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T11:41:04.564Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

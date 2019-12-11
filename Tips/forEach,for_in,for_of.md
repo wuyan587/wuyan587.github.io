@@ -10,7 +10,7 @@ arr1.forEach((value,index,arr)=>{
     console.log(arr); //arr的值就是其数组本身
 })
 ```
-#### 缺点
+#### <font color='red'> 缺点 </font>
 ​	1.forEach不支持break,return 不能跳出循环
 
 ### for in
@@ -26,7 +26,7 @@ for(let index in arr){
 }
 ```
 
-#### 缺点
+#### <font color='red'>缺点</font>
 ​	1.for in遍历数组的时候，遍历的顺序是乱的。
 ​	2.for in遍历数组的时候，会遍历自定义索引。
 ​	3.for in遍历的时候，索引的类型是string。
@@ -46,10 +46,10 @@ for(let index in arr){
     }
 ```
 
-#### 缺点
+#### <font color='red'>缺点</font>
 ​	1.没法获取索引！想要获取索引需要用到entries()。
 
-​	<!--entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)。-->
+​	*entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)。*
 
 ```javascript
     //遍历数组
