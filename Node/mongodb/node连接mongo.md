@@ -97,4 +97,5 @@
         //删除数据
         tables.deleteOne({name:'李四'});  //删除第一条匹配的数据
         tables.deleteMany({name:'李四'}); //删除全部匹配的数据
+    })
 ```
