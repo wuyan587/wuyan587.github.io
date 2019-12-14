@@ -61,7 +61,7 @@ v-show=
 ```
 v-show v-if的差别为
 v-if为false时则直接不渲染这个元素，而v-show则是通过设置元素的display的值来改变元素的显示与否
-v-if的性能优势比v-show高，但是当一个元素需要频繁的出现和消失时更推荐使用v-show。
+v-if的性能优势比v-show高，但是当一个元素需要**<font color='red'>频繁</font>**的出现和消失时更推荐使用v-show。
 
 
 ### Vue的循环
