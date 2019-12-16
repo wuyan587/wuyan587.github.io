@@ -541,37 +541,37 @@ axios({
     .catch(err=&gt;<span class="hljs-built_in">console</span>.log(err))<span class="hljs-comment">//promise&#x7528;catch&#x6765;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
 </code></pre>
 <h3 id="post&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;">post&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</h3>
-<ol>
-<li>&#x4F7F;&#x7528;json&#x7684;&#x683C;&#x5F0F;&#x8FDB;&#x884C;&#x53D1;&#x9001;
-```javascript
-axios({
- method:&apos;post&apos;&#xFF0C;//&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x662F;get&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x586B;post&#xFF0C;put&#xFF0C;delete
- url:&apos;&apos;,//&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;
- data:{ //&#x5F53;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x4E3A;post&#x65F6;&#xFF0C;&#x53C2;&#x6570;&#x653E;&#x5728;data&#x91CC;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x4E3A;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5F62;&#x5F0F;<pre><code> key1:value1,
- key2:value2,
-</code></pre> }
-}).then(data=&gt;{console.log(data)})//axios&#x662F;&#x7528;promise&#x5C01;&#x88C5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x8FC7;then&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x7684;&#x5904;&#x7406;&#x3002;
- .catch(err=&gt;console.log(err))//promise&#x7528;catch&#x6765;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;</li>
-</ol>
-<pre><code>&#x5F53;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;json&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x67E5;&#x770B;f12&#x7684;network&#x53EF;&#x4EE5;&#x770B;&#x5230;
+<p><strong>&#x4F7F;&#x7528;json&#x7684;&#x683C;&#x5F0F;&#x8FDB;&#x884C;&#x53D1;&#x9001;</strong></p>
+<pre><code class="lang-javascript">axios({
+    method:<span class="hljs-string">&apos;post&apos;</span>&#xFF0C;<span class="hljs-comment">//&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x662F;get&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x586B;post&#xFF0C;put&#xFF0C;delete</span>
+    url:<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-comment">//&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;</span>
+    data:{ <span class="hljs-comment">//&#x5F53;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x4E3A;post&#x65F6;&#xFF0C;&#x53C2;&#x6570;&#x653E;&#x5728;data&#x91CC;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x4E3A;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5F62;&#x5F0F;</span>
+        key1:value1,
+        key2:value2}})
+.then(data=&gt;{<span class="hljs-built_in">console</span>.log(data)})<span class="hljs-comment">//axios&#x662F;&#x7528;promise&#x5C01;&#x88C5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x8FC7;then&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x7684;&#x5904;&#x7406;&#x3002;</span>
+.catch(err=&gt;<span class="hljs-built_in">console</span>.log(err))<span class="hljs-comment">//promise&#x7528;catch&#x6765;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+</code></pre>
+<ul>
+<li>&#x5F53;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;json&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x67E5;&#x770B;f12&#x7684;network&#x53EF;&#x4EE5;&#x770B;&#x5230;
 content-type: application/json; charset=utf-8
-&#x6570;&#x636E;&#x653E;&#x5728;  Request Payload &#x91CC;&#x8FDB;&#x884C;&#x4F20;&#x8F93;
-
-
-2. &#x4F7F;&#x7528;&#x8868;&#x5355;&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x4F20;&#x8F93;
-```javascript
-const p=new URLSearchParams();
+&#x6570;&#x636E;&#x653E;&#x5728;  Request Payload &#x91CC;&#x8FDB;&#x884C;&#x4F20;&#x8F93;</li>
+</ul>
+<p><strong>&#x4F7F;&#x7528;&#x8868;&#x5355;&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x4F20;&#x8F93;</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> p=<span class="hljs-keyword">new</span> URLSearchParams();
 p.append(key1,value1);
 p.append(key2,value2);
 axios({
-    method:&apos;post&apos;&#xFF0C;//&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x662F;get&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x586B;post&#xFF0C;put&#xFF0C;delete
-    url:&apos;&apos;,//&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;
-    data:p //p&#x91CC;&#x9762;&#x5C31;&#x662F;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;
-}).then(data=&gt;{console.log(data)})//axios&#x662F;&#x7528;promise&#x5C01;&#x88C5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x8FC7;then&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x7684;&#x5904;&#x7406;&#x3002;
-    .catch(err=&gt;console.log(err))//promise&#x7528;catch&#x6765;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;
-</code></pre><p>&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x65F6;&#x5019;
+    method:<span class="hljs-string">&apos;post&apos;</span>&#xFF0C;<span class="hljs-comment">//&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x662F;get&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x586B;post&#xFF0C;put&#xFF0C;delete</span>
+    url:<span class="hljs-string">&apos;&apos;</span>,<span class="hljs-comment">//&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;</span>
+    data:p <span class="hljs-comment">//p&#x91CC;&#x9762;&#x5C31;&#x662F;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;</span>
+}).then(data=&gt;{<span class="hljs-built_in">console</span>.log(data)})<span class="hljs-comment">//axios&#x662F;&#x7528;promise&#x5C01;&#x88C5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x8FC7;then&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x7684;&#x5904;&#x7406;&#x3002;</span>
+    .catch(err=&gt;<span class="hljs-built_in">console</span>.log(err))<span class="hljs-comment">//promise&#x7528;catch&#x6765;&#x5BF9;&#x9519;&#x8BEF;&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x65F6;&#x5019;
 content-type:application/x-www-form-urlencoded;charset=utf-8
-&#x6570;&#x636E;&#x653E;&#x5728;  form-data   &#x91CC;&#x8FDB;&#x884C;&#x4F20;&#x8F93;</p>
+&#x6570;&#x636E;&#x653E;&#x5728;  form-data   &#x91CC;&#x8FDB;&#x884C;&#x4F20;&#x8F93;</li>
+</ul>
 
                                 
                                 </section>
@@ -615,7 +615,7 @@ content-type:application/x-www-form-urlencoded;charset=utf-8
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"axios&fetch","level":"1.3.4","depth":2,"next":{"title":"React","level":"1.4","depth":1,"path":"React/README.md","ref":"React/README.md","articles":[]},"previous":{"title":"Vue事件","level":"1.3.3","depth":2,"path":"Vue/Vue事件.md","ref":"Vue/Vue事件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/axios&fetch.md","mtime":"2019-12-16T12:23:24.632Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T12:24:11.681Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"axios&fetch","level":"1.3.4","depth":2,"next":{"title":"React","level":"1.4","depth":1,"path":"React/README.md","ref":"React/README.md","articles":[]},"previous":{"title":"Vue事件","level":"1.3.3","depth":2,"path":"Vue/Vue事件.md","ref":"Vue/Vue事件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/axios&fetch.md","mtime":"2019-12-16T12:48:37.233Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T12:48:40.225Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

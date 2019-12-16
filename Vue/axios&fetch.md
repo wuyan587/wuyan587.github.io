@@ -47,25 +47,25 @@ axios({
 
 ### post的两种方式
 
-1. 使用json的格式进行发送
+**使用json的格式进行发送**
+
 ```javascript
 axios({
     method:'post'，//请求方式，默认的参数是get，也可以填post，put，delete
     url:'',//请求的地址
     data:{ //当请求方式为post时，参数放在data里进行传输，为键值对的形式
         key1:value1,
-        key2:value2,
-    }
-}).then(data=>{console.log(data)})//axios是用promise封装的，所以通过then的方法来进行后续的处理。
-    .catch(err=>console.log(err))//promise用catch来对错误进行处理
+        key2:value2}})
+.then(data=>{console.log(data)})//axios是用promise封装的，所以通过then的方法来进行后续的处理。
+.catch(err=>console.log(err))//promise用catch来对错误进行处理
 
 ```
-当使用这种形式进行传输数据的时候，默认为json格式，这时候查看f12的network可以看到
-content-type: application/json; charset=utf-8
-数据放在  Request Payload 里进行传输
+- 当使用这种形式进行传输数据的时候，默认为json格式，这时候查看f12的network可以看到
+  content-type: application/json; charset=utf-8
+  数据放在  Request Payload 里进行传输
 
+**使用表单的形式进行传输**
 
-2. 使用表单的形式进行传输
 ```javascript
 const p=new URLSearchParams();
 p.append(key1,value1);
@@ -76,8 +76,8 @@ axios({
     data:p //p里面就是传输的数据
 }).then(data=>{console.log(data)})//axios是用promise封装的，所以通过then的方法来进行后续的处理。
     .catch(err=>console.log(err))//promise用catch来对错误进行处理
-
 ```
-使用这种形式进行数据传输的时候
-content-type:application/x-www-form-urlencoded;charset=utf-8
-数据放在  form-data   里进行传输
+
+- 使用这种形式进行数据传输的时候
+  content-type:application/x-www-form-urlencoded;charset=utf-8
+  数据放在  form-data   里进行传输
