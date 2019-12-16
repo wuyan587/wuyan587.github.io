@@ -66,13 +66,46 @@ v-if的性能优势比v-show高，但是当一个元素需要**<font color='red'
 
 ### Vue的循环
 
-```js
+```javascript
 v-for='item of arr' //item为数组或对象的值
 v-for='item in arr' //item为数组或对象的值
+
+<ul>
+    <li v-for='(item,index) in arr' v-bind:key='index' > //在遍历的时候，推荐加上key值
+    
+    {{item}} //这里的item为数组的值
+    </li>
+</ul>
+     //渲染出数组的值的个数个的li
 
 //如果需要索引，则使用
 v-for='(item,index) of arr' //item为数组或对象的值，而index为数组的索引或对象的属性
 
 //如果需要在遍历对象的时候再获取索引
 v-for='(item,key,index) of obj' //item为对象的属性值，而key对象的属性，index为对象的索引。
+```
+
+### Vue里对数组进行的操作
+
+当对data里面的数组进行操作时，需要注意以下两点
+1. 直接对数组的length进行改变的时候，视图(V)并不会随着改变而改变，但是数据确实会改变
+```js
+//如
+arr.length=0;//这样直接将数组的length设置为0
+```
+2. 直接对数组的索引进行改变时，也就是如 arr[index]=1;这样直接设置某个索引的值的时候，视图(V)也并不会随着改变而改变，但是数据确实会改变。
+
+所以如果需要通过索引改变数组的值的时候，需要用到Vue.set(arr,index,value);这个方法 --内部封装了Object.assign()这个方法
+
+### v-model
+
+v-model这个值**<font color='red'>只能在表单</font>**里使用，也就是相当于绑定了表单input框的value值
+```javascript
+<input v-model='val'> 
+
+new Vue({
+    data:{
+        val:''
+    }
+})
 ```

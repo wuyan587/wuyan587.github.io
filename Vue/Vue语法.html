@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../React/" />
+    <link rel="next" href="Vue事件.html" />
     
     
     <link rel="prev" href="Vue简介.html" />
@@ -365,6 +365,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.3" data-path="Vue事件.html">
+            
+                <a href="Vue事件.html">
+            
+                    
+                    Vue事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="axios&fetch.html">
+            
+                <a href="axios&fetch.html">
+            
+                    
+                    axios&fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -521,14 +547,42 @@ v-show=
 v-if&#x4E3A;false&#x65F6;&#x5219;&#x76F4;&#x63A5;&#x4E0D;&#x6E32;&#x67D3;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x800C;v-show&#x5219;&#x662F;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;display&#x7684;&#x503C;&#x6765;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x7684;&#x663E;&#x793A;&#x4E0E;&#x5426;
 v-if&#x7684;&#x6027;&#x80FD;&#x4F18;&#x52BF;&#x6BD4;v-show&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x9700;&#x8981;<strong><font color="red">&#x9891;&#x7E41;</font></strong>&#x7684;&#x51FA;&#x73B0;&#x548C;&#x6D88;&#x5931;&#x65F6;&#x66F4;&#x63A8;&#x8350;&#x4F7F;&#x7528;v-show&#x3002;</p>
 <h3 id="vue&#x7684;&#x5FAA;&#x73AF;">Vue&#x7684;&#x5FAA;&#x73AF;</h3>
-<pre><code class="lang-js">v-<span class="hljs-keyword">for</span>=<span class="hljs-string">&apos;item of arr&apos;</span> <span class="hljs-comment">//item&#x4E3A;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x503C;</span>
-v-<span class="hljs-keyword">for</span>=<span class="hljs-string">&apos;item in arr&apos;</span> <span class="hljs-comment">//item&#x4E3A;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x503C;</span>
+<pre><code class="lang-javascript">v-for=&apos;item of arr&apos; //item&#x4E3A;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x503C;
+v-for=&apos;item in arr&apos; //item&#x4E3A;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x503C;
 
-<span class="hljs-comment">//&#x5982;&#x679C;&#x9700;&#x8981;&#x7D22;&#x5F15;&#xFF0C;&#x5219;&#x4F7F;&#x7528;</span>
-v-<span class="hljs-keyword">for</span>=<span class="hljs-string">&apos;(item,index) of arr&apos;</span> <span class="hljs-comment">//item&#x4E3A;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF0C;&#x800C;index&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</span>
+&lt;ul&gt;
+    &lt;li v-for=&apos;(item,index) in arr&apos; v-bind:key=&apos;index&apos; &gt; //&#x5728;&#x904D;&#x5386;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63A8;&#x8350;&#x52A0;&#x4E0A;key&#x503C;
 
-<span class="hljs-comment">//&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x518D;&#x83B7;&#x53D6;&#x7D22;&#x5F15;</span>
-v-<span class="hljs-keyword">for</span>=<span class="hljs-string">&apos;(item,key,index) of obj&apos;</span> <span class="hljs-comment">//item&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x800C;key&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;index&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x7D22;&#x5F15;&#x3002;</span>
+     //&#x8FD9;&#x91CC;&#x7684;item&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x503C;
+    &lt;/li&gt;
+&lt;/ul&gt;
+     //&#x6E32;&#x67D3;&#x51FA;&#x6570;&#x7EC4;&#x7684;&#x503C;&#x7684;&#x4E2A;&#x6570;&#x4E2A;&#x7684;li
+
+//&#x5982;&#x679C;&#x9700;&#x8981;&#x7D22;&#x5F15;&#xFF0C;&#x5219;&#x4F7F;&#x7528;
+v-for=&apos;(item,index) of arr&apos; //item&#x4E3A;&#x6570;&#x7EC4;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF0C;&#x800C;index&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;
+
+//&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x518D;&#x83B7;&#x53D6;&#x7D22;&#x5F15;
+v-for=&apos;(item,key,index) of obj&apos; //item&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x800C;key&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;index&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x7D22;&#x5F15;&#x3002;
+</code></pre>
+<h3 id="vue&#x91CC;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x7684;&#x64CD;&#x4F5C;">Vue&#x91CC;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x7684;&#x64CD;&#x4F5C;</h3>
+<p>&#x5F53;&#x5BF9;data&#x91CC;&#x9762;&#x7684;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EE5;&#x4E0B;&#x4E24;&#x70B9;</p>
+<ol>
+<li>&#x76F4;&#x63A5;&#x5BF9;&#x6570;&#x7EC4;&#x7684;length&#x8FDB;&#x884C;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89C6;&#x56FE;(V)&#x5E76;&#x4E0D;&#x4F1A;&#x968F;&#x7740;&#x6539;&#x53D8;&#x800C;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x6570;&#x636E;&#x786E;&#x5B9E;&#x4F1A;&#x6539;&#x53D8;<pre><code class="lang-js"><span class="hljs-comment">//&#x5982;</span>
+arr.length=<span class="hljs-number">0</span>;<span class="hljs-comment">//&#x8FD9;&#x6837;&#x76F4;&#x63A5;&#x5C06;&#x6570;&#x7EC4;&#x7684;length&#x8BBE;&#x7F6E;&#x4E3A;0</span>
+</code></pre>
+</li>
+<li>&#x76F4;&#x63A5;&#x5BF9;&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5982; arr[index]=1;&#x8FD9;&#x6837;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x67D0;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89C6;&#x56FE;(V)&#x4E5F;&#x5E76;&#x4E0D;&#x4F1A;&#x968F;&#x7740;&#x6539;&#x53D8;&#x800C;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x6570;&#x636E;&#x786E;&#x5B9E;&#x4F1A;&#x6539;&#x53D8;&#x3002;</li>
+</ol>
+<p>&#x6240;&#x4EE5;&#x5982;&#x679C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x6539;&#x53D8;&#x6570;&#x7EC4;&#x7684;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x5230;Vue.set(arr,index,value);&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5; --&#x5185;&#x90E8;&#x5C01;&#x88C5;&#x4E86;Object.assign()&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</p>
+<h3 id="v-model">v-model</h3>
+<p>v-model&#x8FD9;&#x4E2A;&#x503C;<strong><font color="red">&#x53EA;&#x80FD;&#x5728;&#x8868;&#x5355;</font></strong>&#x91CC;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x76F8;&#x5F53;&#x4E8E;&#x7ED1;&#x5B9A;&#x4E86;&#x8868;&#x5355;input&#x6846;&#x7684;value&#x503C;</p>
+<pre><code class="lang-javascript">&lt;input v-model=<span class="hljs-string">&apos;val&apos;</span>&gt; 
+
+<span class="hljs-keyword">new</span> Vue({
+    data:{
+        val:<span class="hljs-string">&apos;&apos;</span>
+    }
+})
 </code></pre>
 
                                 
@@ -562,7 +616,7 @@ v-<span class="hljs-keyword">for</span>=<span class="hljs-string">&apos;(item,ke
                 </a>
                 
                 
-                <a href="../React/" class="navigation navigation-next " aria-label="Next page: React">
+                <a href="Vue事件.html" class="navigation navigation-next " aria-label="Next page: Vue事件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -573,7 +627,7 @@ v-<span class="hljs-keyword">for</span>=<span class="hljs-string">&apos;(item,ke
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue语法","level":"1.3.2","depth":2,"next":{"title":"React","level":"1.4","depth":1,"path":"React/README.md","ref":"React/README.md","articles":[]},"previous":{"title":"Vue简介","level":"1.3.1","depth":2,"path":"Vue/Vue简介.md","ref":"Vue/Vue简介.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/Vue语法.md","mtime":"2019-12-14T07:52:28.309Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-14T10:03:35.692Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue语法","level":"1.3.2","depth":2,"next":{"title":"Vue事件","level":"1.3.3","depth":2,"path":"Vue/Vue事件.md","ref":"Vue/Vue事件.md","articles":[]},"previous":{"title":"Vue简介","level":"1.3.1","depth":2,"path":"Vue/Vue简介.md","ref":"Vue/Vue简介.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/Vue语法.md","mtime":"2019-12-16T11:48:29.390Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T12:24:11.681Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
