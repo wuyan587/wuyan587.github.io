@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Vue · GitBook</title>
+        <title>自定义指令 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Vue简介.html" />
+    <link rel="next" href="过滤器.html" />
     
     
-    <link rel="prev" href="../Node/koa/Koa.html" />
+    <link rel="prev" href="axios&fetch.html" />
     
 
     </head>
@@ -325,7 +325,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="./">
             
                 <a href="./">
             
@@ -391,7 +391,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="自定义指令.html">
+        <li class="chapter active" data-level="1.3.5" data-path="自定义指令.html">
             
                 <a href="自定义指令.html">
             
@@ -510,7 +510,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Vue</a>
+        <a href=".." >自定义指令</a>
     </h1>
 </div>
 
@@ -525,7 +525,106 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B2C;&#x4E8C;&#x7AE0;">&#x7B2C;&#x4E8C;&#x7AE0;</h1>
+                                <h1 id="vue&#x81EA;&#x5B9A;&#x4E49;&#x6307;&#x4EE4;--directive">Vue&#x81EA;&#x5B9A;&#x4E49;&#x6307;&#x4EE4; -directive</h1>
+<h3 id="&#x5168;&#x5C40;&#x6307;&#x4EE4;">&#x5168;&#x5C40;&#x6307;&#x4EE4;</h3>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x4F7F;&#x7528;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x5982;v-if,v-for,v-on...
+&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;v-&#x6307;&#x4EE4;&#x540D;&#x7684;&#x6307;&#x4EE4;
+&#x4F7F;&#x7528;Vue.directive()</p>
+<p><strong>Vue.directive()</strong>
+Vue.directive&#x91CC;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;</p>
+<ol>
+<li>&#x6307;&#x4EE4;&#x7684;&#x540D;&#x79F0;</li>
+<li>&#x6307;&#x4EE4;&#x7684;&#x8BBE;&#x7F6E;(&#x53C2;&#x6570;)</li>
+</ol>
+<p>Vue.directive(&apos;&#x6307;&#x4EE4;&#x540D;&apos;,option)</p>
+<ol>
+<li>option&#x662F;&#x4E2A;&#x5BF9;&#x8C61;{}&#xFF0C;&#x91CC;&#x9762;&#x662F;5&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;<ul>
+<li><strong>bind(){}</strong> &#x5F53;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x7ED1;&#x5B9A;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</li>
+<li><strong>inserted(){}</strong> &#x5F53;&#x6307;&#x4EE4;&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x88AB;&#x52A0;&#x5165;&#x5230;View&#x7684;&#x65F6;&#x5019;&#x5C31;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;(&#x4E5F;&#x5C31;&#x662F;&#x80FD;&#x770B;&#x5230;&#x7684;&#x65F6;&#x5019;&#xFF0C;v-show&#x65E0;&#x6548;)</li>
+<li><strong>componentUpdated()</strong> &#x6682;&#x65F6;&#x4E0D;&#x7528;</li>
+<li><strong>update(){}</strong> &#x6682;&#x65F6;&#x4E0D;&#x7528;</li>
+<li><strong>unbind(){}</strong> &#x5F53;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x89E3;&#x7ED1;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5143;&#x7D20;&#x4ECE;View&#x4E2D;&#x88AB;&#x5220;&#x9664;&#x7684;&#x65F6;&#x5019;&#x89E6;&#x53D1;&#xFF08;v-show&#x65E0;&#x6548;&#xFF09;</li>
+</ul>
+</li>
+<li><strong>&#x94A9;&#x5B50;&#x51FD;&#x6570;</strong>
+&#x6BCF;&#x4E2A;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x91CC;&#x90FD;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;el&#x548C;binding
+ -el:&#x6307;&#x4EE3;&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E5F;&#x5C31;&#x539F;&#x751F;&#x91CC;&#x7684;document.querySelect()&#x6240;&#x83B7;&#x53D6;&#x7684;&#x5143;&#x7D20;&#x3002;
+ -binding:&#x6307;&#x4EE3;&#x7ED1;&#x5B9A;&#x65F6;&#x5019;&#x7684;&#x5404;&#x79CD;&#x53C2;&#x6570;&#x3002;<pre><code class="lang-javascript">&lt;div v-red&gt;1&lt;/div&gt;  //&#x8FD9;&#x91CC;&#x7ED1;&#x5B9A;&#x4E86;&#x4E0B;&#x9762;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E2A;&#x53EB;v-red&#x7684;&#x6307;&#x4EE4;
+Vue.directive(&apos;red&apos;,{ //&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x52A0;&#x4E0A;v-
+ bind(el,binding){   //&#x5F53;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x5143;&#x7D20;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;
+     console.log(el);//&#x5982;&#x4E0A;&#x9762;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;el&#x6307;&#x4EE3;&lt;div v-red&gt;1&lt;/div&gt;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;
+     console.log(binding)
+ },
+ inserted(el,binding){  //&#x5F53;&#x7ED1;&#x5B9A;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x7684;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x5728;View&#x91CC;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;
+         el.style.background=&apos;red&apos;; //&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x53D8;&#x6210;&#x7EA2;&#x8272;
+ },
+ unbind(el,binding){ //&#x5F53;&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x89E3;&#x7ED1;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x5C31;&#x662F;&#x4ECE;View&#x4E2D;&#x6D88;&#x5931;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;
+     console.log(&apos;&#x6CA1;&#x4E86;&apos;)
+ }
+})
+</code></pre>
+<strong>&#x4FEE;&#x9970;</strong></li>
+<li>&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x6307;&#x4EE4;&#x7684;&#x540E;&#x9762;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x7684;&#x4FEE;&#x9970;&#x7B26;&#x3002;v-&#x6307;&#x4EE4;.&#x4FEE;&#x9970;&#x7B26;<ul>
+<li>&#x5982;v-red.a,v-red.b &#x8FD9;&#x91CC;&#x7ED9;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;red&#x6307;&#x4EE4;&#x52A0;&#x4E86;a&#x548C;b&#x4E24;&#x4E2A;&#x4FEE;&#x9970;&#x7B26;</li>
+<li>&#x90A3;&#x4E48;&#x600E;&#x4E48;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;&#x4FEE;&#x9970;&#x7B26;&#x548C;&#x5224;&#x65AD;&#x4FEE;&#x9970;&#x7B26;&#x7684;&#x4F5C;&#x7528;,&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x7528;&#x5230;&#x4E0A;&#x9762;&#x6240;&#x8BF4;&#x7684;binding&#x53C2;&#x6570;</li>
+<li>binding <ul>
+<li>&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x5404;&#x79CD;&#x53C2;&#x6570;&#xFF1A;<pre><code class="lang-javascript">{
+name: <span class="hljs-string">&quot;red&quot;</span>  <span class="hljs-comment">//&#x6307;&#x4EE4;&#x7684;&#x540D;&#x5B57;</span>
+rawName: <span class="hljs-string">&quot;v-red.a&quot;</span> <span class="hljs-comment">//&#x771F;&#x6B63;&#x7684;&#x6307;&#x4EE4;&#x5168;&#x5199;</span>
+modifiers: {a: <span class="hljs-literal">true</span>} 
+<span class="hljs-comment">//&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x4FEE;&#x9970;&#x7B26;&#x5B58;&#x5728;&#x7684;&#x5730;&#x65B9;&#x4E86;&#xFF0C;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x91CC;&#x9762;&#x7684;key&#x4E3A;&#x4FEE;&#x9970;&#x7B26;&#x540D;,&#x5B58;&#x5728;&#x5C31;&#x662F;true,&#x5426;&#x5219;&#x4E3A;false</span>
+def: {bind: &#x192;, inserted: &#x192;, unbind: &#x192;}
+}
+</code></pre>
+<pre><code class="lang-javascript">Vue.directive(<span class="hljs-string">&apos;red&apos;</span>,{ 
+  bind(el,binding){  
+      <span class="hljs-built_in">console</span>.log(binding)
+  },
+  inserted(el,binding){  <span class="hljs-comment">//</span>
+      <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5224;&#x65AD;binding&#x7684;modifiers.a&#x5B58;&#x4E0D;&#x5B58;&#x5728;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</span>
+      <span class="hljs-keyword">if</span>(binding.modifiers.a) <span class="hljs-comment">//a&#x7684;&#x503C;&#x5982;&#x4E0A;&#xFF0C;&#x5B58;&#x5728;&#x5C31;&#x4E3A;true,&#x5426;&#x5219;&#x4E3A;false</span>
+          el.style.background=<span class="hljs-string">&apos;yellow&apos;</span>;
+          <span class="hljs-comment">//&#x5982;&#x679C;&#x6307;&#x4EE4;&#x540E;&#x9762;&#x5B58;&#x5728;&#x7684;&#x4FEE;&#x9970;&#x7B26;&#x53EB;a,&#x90A3;&#x4E48;&#x5C31;&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x53D8;&#x6210;&#x9EC4;&#x8272;</span>
+  },
+  unbind(el,binding){ 
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6CA1;&#x4E86;&apos;</span>)
+  }
+})
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x6307;&#x4EE4;&#x7684;&#x540E;&#x9762;&#x53EF;&#x4EE5;&#x8DDF;&#x51FD;&#x6570;&#xFF0C;&#x5982;v-&#x6307;&#x4EE4;=&apos;fn&apos;<ul>
+<li>&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x5230;&#x7ED1;&#x5B9A;&#x7684;&#x51FD;&#x6570;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x6211;&#x4EEC;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;binding&#x6765;&#x5224;&#x65AD;&#x3002;
+-binding&#x91CC;&#x7684;expression&#x91CC;&#x9762;&#x7684;&#x5C5E;&#x6027;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;</li>
+</ul>
+</li>
+</ol>
+<h3 id="&#x5C40;&#x90E8;&#x6307;&#x4EE4;">&#x5C40;&#x90E8;&#x6307;&#x4EE4;</h3>
+<ul>
+<li>&#x5C40;&#x90E8;&#x6307;&#x4EE4;&#x7684;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x4E3A;&#x5728;Vue&#x5B9E;&#x4F8B;&#x91CC;directives,&#x5176;&#x4ED6;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x540C;&#x5168;&#x5C40;&#x6307;&#x4EE4;&#x76F8;&#x540C;<pre><code class="lang-javascript">  <span class="hljs-keyword">new</span> Vue({
+      directives:{
+          <span class="hljs-string">&apos;&#x6307;&#x4EE4;&#x540D;&apos;</span>:{
+               bind(el,binding){   <span class="hljs-comment">//&#x5F53;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x5143;&#x7D20;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</span>
+              <span class="hljs-built_in">console</span>.log(el);<span class="hljs-comment">//&#x5982;&#x4E0A;&#x9762;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;el&#x6307;&#x4EE3;&lt;div v-red&gt;1&lt;/div&gt;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;</span>
+              <span class="hljs-built_in">console</span>.log(binding)
+              },
+              inserted(el,binding){  <span class="hljs-comment">//&#x5F53;&#x7ED1;&#x5B9A;&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x7684;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x5728;View&#x91CC;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;</span>
+                      el.style.background=<span class="hljs-string">&apos;red&apos;</span>; <span class="hljs-comment">//&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x53D8;&#x6210;&#x7EA2;&#x8272;</span>
+              },
+              unbind(el,binding){ <span class="hljs-comment">//&#x5F53;&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x89E3;&#x7ED1;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x5C31;&#x662F;&#x4ECE;View&#x4E2D;&#x6D88;&#x5931;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</span>
+                  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6CA1;&#x4E86;&apos;</span>)
+              }
+          }
+      }
+  })
+</code></pre>
+<h3 id="&#x5168;&#x5C40;&#x8DDF;&#x5C40;&#x90E8;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;">&#x5168;&#x5C40;&#x8DDF;&#x5C40;&#x90E8;&#x6307;&#x4EE4;&#x7684;&#x4E0D;&#x540C;</h3>
+</li>
+</ul>
+<p>&#x5168;&#x5C40;&#x8DDF;&#x5C40;&#x90E8;&#x6307;&#x4EE4;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#xFF0C;&#x5168;&#x5C40;&#x5B9A;&#x4E49;&#x7684;&#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x5728;&#x6240;&#x6709;&#x7684;Vue&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x5C40;&#x90E8;&#x7684;&#x53EA;&#x80FD;&#x5728;&#x5B9A;&#x4E49;&#x7684;&#x90A3;&#x4E2A;Vue&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x3002;</p>
 
                                 
                                 </section>
@@ -553,12 +652,12 @@
 
             
                 
-                <a href="../Node/koa/Koa.html" class="navigation navigation-prev " aria-label="Previous page: koa">
+                <a href="axios&fetch.html" class="navigation navigation-prev " aria-label="Previous page: axios&fetch">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Vue简介.html" class="navigation navigation-next " aria-label="Next page: Vue简介">
+                <a href="过滤器.html" class="navigation navigation-next " aria-label="Next page: 过滤器">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -569,7 +668,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.3","depth":1,"next":{"title":"Vue简介","level":"1.3.1","depth":2,"path":"Vue/Vue简介.md","ref":"Vue/Vue简介.md","articles":[]},"previous":{"title":"koa","level":"1.2.9.1","depth":3,"path":"Node/koa/Koa.md","ref":"Node/koa/Koa.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/README.md","mtime":"2019-12-09T02:48:17.579Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T11:21:24.144Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"自定义指令","level":"1.3.5","depth":2,"next":{"title":"过滤器","level":"1.3.6","depth":2,"path":"Vue/过滤器.md","ref":"Vue/过滤器.md","articles":[]},"previous":{"title":"axios&fetch","level":"1.3.4","depth":2,"path":"Vue/axios&fetch.md","ref":"Vue/axios&fetch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/自定义指令.md","mtime":"2019-12-19T09:31:11.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T11:21:24.144Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

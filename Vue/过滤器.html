@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Tips · GitBook</title>
+        <title>过滤器 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="forEach,for_in,for_of.html" />
+    <link rel="next" href="../React/" />
     
     
-    <link rel="prev" href="../React/" />
+    <link rel="prev" href="自定义指令.html" />
     
 
     </head>
@@ -325,9 +325,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Vue/">
+        <li class="chapter " data-level="1.3" data-path="./">
             
-                <a href="../Vue/">
+                <a href="./">
             
                     
                     Vue
@@ -339,9 +339,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Vue/Vue简介.html">
+        <li class="chapter " data-level="1.3.1" data-path="Vue简介.html">
             
-                <a href="../Vue/Vue简介.html">
+                <a href="Vue简介.html">
             
                     
                     Vue简介
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../Vue/Vue语法.html">
+        <li class="chapter " data-level="1.3.2" data-path="Vue语法.html">
             
-                <a href="../Vue/Vue语法.html">
+                <a href="Vue语法.html">
             
                     
                     Vue语法
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../Vue/Vue事件.html">
+        <li class="chapter " data-level="1.3.3" data-path="Vue事件.html">
             
-                <a href="../Vue/Vue事件.html">
+                <a href="Vue事件.html">
             
                     
                     Vue事件
@@ -378,9 +378,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../Vue/axios&fetch.html">
+        <li class="chapter " data-level="1.3.4" data-path="axios&fetch.html">
             
-                <a href="../Vue/axios&fetch.html">
+                <a href="axios&fetch.html">
             
                     
                     axios&fetch
@@ -391,9 +391,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../Vue/自定义指令.html">
+        <li class="chapter " data-level="1.3.5" data-path="自定义指令.html">
             
-                <a href="../Vue/自定义指令.html">
+                <a href="自定义指令.html">
             
                     
                     自定义指令
@@ -404,9 +404,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../Vue/过滤器.html">
+        <li class="chapter active" data-level="1.3.6" data-path="过滤器.html">
             
-                <a href="../Vue/过滤器.html">
+                <a href="过滤器.html">
             
                     
                     过滤器
@@ -435,9 +435,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../Tips/">
             
-                <a href="./">
+                <a href="../Tips/">
             
                     
                     Tips
@@ -449,9 +449,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="forEach,for_in,for_of.html">
+        <li class="chapter " data-level="1.5.1" data-path="../Tips/forEach,for_in,for_of.html">
             
-                <a href="forEach,for_in,for_of.html">
+                <a href="../Tips/forEach,for_in,for_of.html">
             
                     
                     forEach,for_in,for_of
@@ -462,9 +462,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="事件的兼容.html">
+        <li class="chapter " data-level="1.5.2" data-path="../Tips/事件的兼容.html">
             
-                <a href="事件的兼容.html">
+                <a href="../Tips/事件的兼容.html">
             
                     
                     事件的兼容
@@ -510,7 +510,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Tips</a>
+        <a href=".." >过滤器</a>
     </h1>
 </div>
 
@@ -525,7 +525,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="&#x8FC7;&#x6EE4;&#x5668;-filter">&#x8FC7;&#x6EE4;&#x5668; filter</h1>
+<h3 id="&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668;">&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668; &#x4F7F;&#x7528;&#xFF1A;Vue.filter();</p>
+<p><strong>Vue.filter()</strong>
+Vue.filter()&#x91CC;&#x7684;&#x53C2;&#x6570;&#x4E3A;</p>
+<ol>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0;</li>
+<li>&#x56DE;&#x8C03;&#x51FD;&#x6570;
+<strong>Vue.filter(&apos;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0;&apos;,()=&gt;{})</strong></li>
+</ol>
+<pre><code class="lang-js">&lt;div&gt; &apos;a1a2a3a4&apos; | filtera &lt;/div&gt; // | &#x4E3A;&#x7BA1;&#x9053;&#x7B26;
+Vue.filter(&apos; filtera&apos;,(val)=&gt;{ //&#x8FD9;&#x91CC;&#x7684;val&#x5C31;&#x662F;&#x9700;&#x8981;&#x8FC7;&#x6EE4;&#x7684;&#x503C;&#xFF0C;
+   return val.replace(&apos;a&apos;,&apos;&apos;); //&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;a&#x5168;&#x90E8;&#x8FC7;&#x6EE4;&#x6389;
+})
+</code></pre>
+<p><strong>&#x4F20;&#x53C2;</strong>
+&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x91CC;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5F00;&#x59CB;&#x5C31;&#x662F;&#x5916;&#x9762;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5982;</p>
+<pre><code class="lang-js"> &lt;div&gt; a1a2a3a4 | &#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0; &lt;/div&gt;
+&lt;div&gt; 1 | filternum(2)&lt;/div&gt; // | &#x4E3A;&#x7BA1;&#x9053;&#x7B26;  &#x8FD9;&#x91CC;&#x7684;&#x7ED3;&#x679C;&#x4E3A;3
+Vue.filter(&apos;filternum&apos;,(val,n)=&gt;{ //&#x8FD9;&#x91CC;&#x7684;val&#x5C31;&#x662F;&#x9700;&#x8981;&#x8FC7;&#x6EE4;&#x7684;&#x503C;&#xFF0C;n&#x4E3A;&#x5916;&#x754C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;
+    return val+n; //&#x5BF9;val&#x548C;n&#x8FDB;&#x884C;&#x5904;&#x7406; 1+2=3
+})
+</code></pre>
+<h3 id="&#x5C40;&#x90E8;&#x8FC7;&#x6EE4;&#x5668;">&#x5C40;&#x90E8;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>&#x5728;Vue&#x5B9E;&#x4F8B;&#x91CC;&#x7684;filters&#x91CC;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">new</span> Vue({
+    filters:{
+        <span class="hljs-string">&apos;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0;&apos;</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{}
+    }
+})
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x5982;&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<h3 id="&#x5C40;&#x90E8;&#x548C;&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x533A;&#x522B;">&#x5C40;&#x90E8;&#x548C;&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x533A;&#x522B;</h3>
+<p>&#x5168;&#x5C40;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x53EF;&#x4EE5;&#x5728;&#x6240;&#x6709;&#x7684;Vue&#x5B9E;&#x4F8B;&#x91CC;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x5C40;&#x90E8;&#x7684;&#x53EA;&#x80FD;&#x5728;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x90A3;&#x4E2A;Vue&#x5B9E;&#x4F8B;&#x91CC;&#x4F7F;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x63A8;&#x8350;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x8FC7;&#x6EE4;&#x5668;</p>
+
                                 
                                 </section>
                             
@@ -552,12 +586,12 @@
 
             
                 
-                <a href="../React/" class="navigation navigation-prev " aria-label="Previous page: React">
+                <a href="自定义指令.html" class="navigation navigation-prev " aria-label="Previous page: 自定义指令">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="forEach,for_in,for_of.html" class="navigation navigation-next " aria-label="Next page: forEach,for_in,for_of">
+                <a href="../React/" class="navigation navigation-next " aria-label="Next page: React">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -568,7 +602,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Tips","level":"1.5","depth":1,"next":{"title":"forEach,for_in,for_of","level":"1.5.1","depth":2,"path":"Tips/forEach,for_in,for_of.md","ref":"Tips/forEach,for_in,for_of.md","articles":[]},"previous":{"title":"React","level":"1.4","depth":1,"path":"React/README.md","ref":"React/README.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tips/README.md","mtime":"2019-12-11T09:26:29.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T11:21:24.144Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"过滤器","level":"1.3.6","depth":2,"next":{"title":"React","level":"1.4","depth":1,"path":"React/README.md","ref":"React/README.md","articles":[]},"previous":{"title":"自定义指令","level":"1.3.5","depth":2,"path":"Vue/自定义指令.md","ref":"Vue/自定义指令.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","copy-code-button"],"pluginsConfig":{"expandable-chapters":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/过滤器.md","mtime":"2019-12-19T11:21:06.383Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T11:21:24.144Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
